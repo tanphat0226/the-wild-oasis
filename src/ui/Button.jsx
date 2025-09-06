@@ -48,7 +48,11 @@ const variations = {
 	`,
 }
 
-const Button = styled.button`
+// Prevent 'variation' and 'size' props from being passed to the DOM
+// https://styled-components.com/docs/api#shouldforwardprop
+const Button = styled.button.withConfig({
+	shouldForwardProp: (prop) => !['variation', 'size'].includes(prop),
+})`
 	border: none;
 	border-radius: var(--border-radius-sm);
 	box-shadow: var(--shadow-sm);
