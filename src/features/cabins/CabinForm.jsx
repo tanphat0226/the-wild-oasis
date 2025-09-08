@@ -10,7 +10,7 @@ import Textarea from '../../ui/Textarea'
 import { useCreateCabin } from './useCreateCabin'
 import { useEditCabin } from './useEditCabin'
 
-function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
+function CabinForm({ cabinToEdit = {}, onCloseModal }) {
 	const { isCreating, createCabin } = useCreateCabin()
 	const { isEditing, editCabin } = useEditCabin()
 	const isWorking = isCreating || isEditing
@@ -167,4 +167,4 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
 	)
 }
 
-export default CreateCabinForm
+export default CabinForm
