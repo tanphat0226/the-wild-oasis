@@ -6,6 +6,7 @@ import Table from '../../ui/Table'
 
 import { formatCurrency } from '../../utils/helpers'
 import { formatDistanceFromNow } from '../../utils/helpers'
+import { BOOKINGS_STATUS } from '../../utils/constant'
 
 const Cabin = styled.div`
 	font-size: 1.6rem;
@@ -49,9 +50,9 @@ function BookingRow({
 	},
 }) {
 	const statusToTagName = {
-		unconfirmed: 'blue',
-		'checked-in': 'green',
-		'checked-out': 'silver',
+		[BOOKINGS_STATUS.UNCONFIRMED]: 'blue',
+		[BOOKINGS_STATUS.CHECKED_IN]: 'green',
+		[BOOKINGS_STATUS.CHECKED_OUT]: 'silver',
 	}
 
 	return (
