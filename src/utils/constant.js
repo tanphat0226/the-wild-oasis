@@ -6,3 +6,14 @@ export const FILTER_CABINS = {
 	NO_DISCOUNT: 'no-discount',
 	WITH_DISCOUNT: 'with-discount',
 }
+
+export const CABINS_SORT_OPTIONS = {
+	NAME_ASC: 'name-asc',
+	NAME_DESC: 'name-desc',
+	PRICE_ASC: 'regularPrice-asc',
+	PRICE_DESC: 'regularPrice-desc',
+	CAPACITY_ASC: 'maxCapacity-asc',
+	CAPACITY_DESC: 'maxCapacity-desc',
+	DATE_ADDED_ASC: 'startDate-asc',
+	DATE_ADDED_DESC: 'startDate-desc',
+}

@@ -4,7 +4,7 @@ import Spinner from '../../ui/Spinner'
 import Table from '../../ui/Table'
 import CabinRow from './CabinRow'
 import { useCabins } from './useCabins'
-import { FILTER_CABINS } from '../../utils/constant'
+import { CABINS_SORT_OPTIONS, FILTER_CABINS } from '../../utils/constant'
 
 const CabinTable = () => {
 	const { isLoading, cabins } = useCabins()
@@ -12,6 +12,7 @@ const CabinTable = () => {
 
 	if (isLoading) return <Spinner />
 
+	// Filter
 	const filterValue = searchParams.get('discount') || FILTER_CABINS.ALL
 
 	let filteredCabins
@@ -22,6 +23,21 @@ const CabinTable = () => {
 
 	if (filterValue === FILTER_CABINS.WITH_DISCOUNT)
 		filteredCabins = cabins.filter((cabin) => cabin.discount > 0)
+
+	// Sort
+	const sortBy =
+		searchParams.get('sortBy') || CABINS_SORT_OPTIONS.DATE_ADDED_ASC
+
+	const [field, direction] = sortBy.split('-')
+	const modifier = direction === 'asc' ? 1 : -1
+	const sortedCabins = filteredCabins.sort((a, b) => {
+		// For string field (name), use localeCompare to compare alphabetically
+		if (typeof a[field] === 'string') {
+			return a[field].localeCompare(b[field]) * modifier
+		}
+
+		return (a[field] - b[field]) * modifier
+	})
 
 	return (
 		<Menus>
@@ -37,7 +53,8 @@ const CabinTable = () => {
 
 				<Table.Body
 					// data={cabins}
-					data={filteredCabins}
+					// data={filteredCabins}
+					data={sortedCabins}
 					render={(cabin) => (
 						<CabinRow key={cabin.id} cabin={cabin} />
 					)}
