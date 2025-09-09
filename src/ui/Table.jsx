@@ -93,7 +93,7 @@ const Row = ({ children }) => {
 }
 
 const Body = ({ data, render }) => {
-	if (data.length === 0) return <Empty>No items found.</Empty>
+	if (data.length === 0) return <Empty>No data to show at the moment.</Empty>
 
 	return <StyledBody>{data.map(render)}</StyledBody>
 }

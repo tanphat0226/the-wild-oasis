@@ -5,12 +5,15 @@ import Table from '../../ui/Table'
 import CabinRow from './CabinRow'
 import { useCabins } from './useCabins'
 import { CABINS_SORT_OPTIONS, FILTER_CABINS } from '../../utils/constant'
+import Empty from '../../ui/Empty'
 
 const CabinTable = () => {
 	const { isLoading, cabins } = useCabins()
 	const [searchParams] = useSearchParams()
 
 	if (isLoading) return <Spinner />
+
+	if (!cabins.length) return <Empty resource='Cabins' />
 
 	// Filter
 	const filterValue = searchParams.get('discount') || FILTER_CABINS.ALL
