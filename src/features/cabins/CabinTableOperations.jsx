@@ -1,6 +1,6 @@
 import TableOperations from '../../ui/TableOperations'
 import Filter from '../../ui/Filter'
-import { CABINS_SORT_OPTIONS, FILTER_CABINS } from '../../utils/constant'
+import { CABINS_SORT_OPTIONS, FILTER_CABINS } from '../../utils/constants'
 import SortBy from '../../ui/SortBy'
 
 const CabinTableOperations = () => {

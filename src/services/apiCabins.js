@@ -1,4 +1,4 @@
-import { SUPABASE_URL } from '../utils/constant'
+import { SUPABASE_URL } from '../utils/constants'
 import supabase from './supabase'
 
 export async function getCabins() {

@@ -4,7 +4,7 @@ import Spinner from '../../ui/Spinner'
 import Table from '../../ui/Table'
 import CabinRow from './CabinRow'
 import { useCabins } from './useCabins'
-import { CABINS_SORT_OPTIONS, FILTER_CABINS } from '../../utils/constant'
+import { CABINS_SORT_OPTIONS, FILTER_CABINS } from '../../utils/constants'
 import Empty from '../../ui/Empty'
 
 const CabinTable = () => {

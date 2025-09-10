@@ -31,3 +31,5 @@ export const BOOKINGS_SORT_OPTIONS = {
 	TOTAL_PRICE_DESC: 'totalPrice-desc',
 	TOTAL_PRICE_ASC: 'totalPrice-asc',
 }
+
+export const PAGE_SIZE = 10

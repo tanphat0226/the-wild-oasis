@@ -6,7 +6,7 @@ import Table from '../../ui/Table'
 
 import { formatCurrency } from '../../utils/helpers'
 import { formatDistanceFromNow } from '../../utils/helpers'
-import { BOOKINGS_STATUS } from '../../utils/constant'
+import { BOOKINGS_STATUS } from '../../utils/constants'
 
 const Cabin = styled.div`
 	font-size: 1.6rem;

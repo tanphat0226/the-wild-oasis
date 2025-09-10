@@ -1,7 +1,7 @@
 import SortBy from '../../ui/SortBy'
 import Filter from '../../ui/Filter'
 import TableOperations from '../../ui/TableOperations'
-import { BOOKINGS_SORT_OPTIONS, BOOKINGS_STATUS } from '../../utils/constant'
+import { BOOKINGS_SORT_OPTIONS, BOOKINGS_STATUS } from '../../utils/constants'
 
 function BookingTableOperations() {
 	return (
