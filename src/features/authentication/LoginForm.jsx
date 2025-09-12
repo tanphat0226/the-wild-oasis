@@ -17,7 +17,15 @@ function LoginForm() {
 		if (!email || !password) return
 
 		// Call login service
-		login({ email, password })
+		login(
+			{ email, password },
+			{
+				onSettled: () => {
+					setEmail('')
+					setPassword('')
+				},
+			}
+		)
 	}
 
 	return (
