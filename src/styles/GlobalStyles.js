@@ -122,6 +122,23 @@ body {
   font-size: 1.6rem;
 }
 
+@media (max-width: 768px) {
+    body::before {
+      content: "This site is optimized for PC. Some features may not display correctly on mobile 📱 → 💻.";
+      position: fixed;
+      inset: 0;
+      background: var(--color-grey-50);
+      color: var(--color-grey-700);
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+      padding: 24px;
+    }
+}
+
 input,
 button,
 textarea,
@@ -180,8 +197,10 @@ h6 {
 img {
   max-width: 100%;
 
-  /* For dark mode */
-  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+/* For dark mode */
+filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+
+
 }
 `
 
